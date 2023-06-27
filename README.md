@@ -26,3 +26,20 @@ python -m venv venv
 # install dependencies
 pip install -r requirements.txt
 ```
+
+## Applying migrations
+
+You can apply a migration with:
+
+```bash
+alembic upgrade head
+```
+
+## Checking after migrations
+
+With `psql` installed you can check after you've run a migration that the table
+exists with:
+
+```bash
+psql -h localhost -U postgres -p 5432 -d newsletter -c "select * from test;"
+```
